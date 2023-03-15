@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "bf5409a5-f0d0-492c-afea-6c24a8ad07aa",
+		"name": "Restaurant NodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "GetAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTableOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "dishes",
+									"value": "[\"uno\"]",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readDishes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/dishes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddDish",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descrizione\": \"Penne all'arrabbiata\",\r\n    \"prezzo\": 3.60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dishes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OrderServed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/6411aad88d165f5b404fc9ea",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"6411aad88d165f5b404fc9ea"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
