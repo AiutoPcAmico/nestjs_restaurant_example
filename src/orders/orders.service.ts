@@ -30,19 +30,7 @@ export class OrdersService {
     })
 
 
-    /*
-          .then((results) => {
-    
-            for (let index = 0; index < results.length; index++) {
-              const dish = results[index];
-              const quantity = order.quantity[index];
-              console.log(dish[0].price);
-              console.log(quantity);
-              // eslint-disable-next-line prettier/prettier
-              totalPrice = totalPrice + (dish[0].price * quantity)
-            }
-          });
-    */
+
 
     modifiedOrder.orderTotalPrice = totalPrice;
     return this.orderModel.create(modifiedOrder);

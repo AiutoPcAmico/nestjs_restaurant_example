@@ -7,9 +7,6 @@ import { Dish, DishSchema } from 'src/dishes/dishes.schema';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'quimongostring',
-    ),
     MongooseModule.forFeature([
       { name: Order.name, schema: OrderSchema },
       { name: Dish.name, schema: DishSchema },
