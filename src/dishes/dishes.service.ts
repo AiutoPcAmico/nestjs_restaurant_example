@@ -5,7 +5,7 @@ import { Dish } from './dishes.schema';
 @Injectable()
 export class DishesService {
   // eslint-disable-next-line prettier/prettier
-  constructor(@InjectModel(Dish.name) private orderModel: any) { }
+  constructor(@InjectModel(Dish.name) private orderModel: any) {}
   create(newDish) {
     return this.orderModel.create(newDish);
   }

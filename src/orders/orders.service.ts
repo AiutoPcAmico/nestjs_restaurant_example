@@ -7,7 +7,10 @@ import { Promise } from 'bluebird';
 @Injectable()
 export class OrdersService {
   // eslint-disable-next-line prettier/prettier
-  constructor(@InjectModel(Order.name) private orderModel: any, @InjectModel(Dish.name) private dishModel: any) { }
+  constructor(
+    @InjectModel(Order.name) private orderModel: any,
+    @InjectModel(Dish.name) private dishModel: any,
+  ) {}
 
   async create(order: any) {
     const modifiedOrder = order;
@@ -48,10 +51,9 @@ export class OrdersService {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async update(orderId: string, updateOrderDto) {
-    const result = await this.orderModel
-      .find({
-        _id: orderId,
-      });
+    const result = await this.orderModel.find({
+      _id: orderId,
+    });
     console.log(result);
     result.deliveryDate = new Date();
     //qui faccio l'update
