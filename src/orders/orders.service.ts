@@ -24,7 +24,7 @@ export class OrdersService {
       });
 
       console.log(dish);
-      console.log(order.quantity[position]);
+      console.log(modifiedOrder.quantity[position]);
       totalPrice = totalPrice + dish[0].price * order.quantity[position];
       position++;
     });

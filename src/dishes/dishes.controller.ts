@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  Req,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth-guard';
 import { DishesService } from './dishes.service';
@@ -24,7 +25,8 @@ export class DishesController {
 
   @UseGuards(JwtAuthGuard)
   @Get()
-  findAll() {
+  findAll(@Req() req: any) {
+    console.log(req.user);
     return this.dishesService.findAll();
   }
 

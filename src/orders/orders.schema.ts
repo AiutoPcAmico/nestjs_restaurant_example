@@ -5,15 +5,15 @@ import { HydratedDocument, Types } from 'mongoose';
 
 export type OrderDocument = HydratedDocument<Order>;
 @Schema({
-  toJSON: { virtuals: true }
+  toJSON: { virtuals: true },
 })
 export class Order {
-  @Prop({ type: [Types.ObjectId], ref: "Dish" })
+  @Prop({ type: [Types.ObjectId], ref: 'Dish' })
   // dishes: [{ quantity: number; price: number; dishId: number }];
-  dishes: Types.ObjectId[]
+  dishes: Types.ObjectId[];
 
   @Prop({ type: [] })
-  dishesPortions: [];
+  quantity: [];
 
   @Prop({ type: Number })
   tableNumber: number;
