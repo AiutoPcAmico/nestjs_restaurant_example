@@ -26,6 +26,9 @@ export class Order {
 
   @Prop()
   deliveryDate: Date;
+
+  @Prop()
+  userId: number;
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

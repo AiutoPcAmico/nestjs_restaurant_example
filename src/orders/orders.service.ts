@@ -23,8 +23,6 @@ export class OrdersService {
         _id: dishId,
       });
 
-      console.log(dish);
-      console.log(modifiedOrder.quantity[position]);
       totalPrice = totalPrice + dish[0].price * order.quantity[position];
       position++;
     });

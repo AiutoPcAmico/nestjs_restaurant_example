@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  Req,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt-auth-guard';
 import { OrdersService } from './orders.service';
@@ -18,8 +19,8 @@ export class OrdersController {
 
   @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() createOrderDto) {
-    console.log(createOrderDto);
+  create(@Body() createOrderDto, @Req() req: any) {
+    createOrderDto.userId = req.user.userId;
     return this.ordersService.create(createOrderDto);
   }
 
