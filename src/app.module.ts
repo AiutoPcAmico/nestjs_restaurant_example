@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import * as dotenv from 'dotenv';
+import { AppController } from './app.controller';
 
 dotenv.config();
 
@@ -16,8 +17,8 @@ dotenv.config();
     AuthModule,
     UsersModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 // eslint-disable-next-line prettier/prettier
-export class AppModule { }
+export class AppModule {}
